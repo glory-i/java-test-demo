@@ -9,4 +9,4 @@ capabilities = "CAPABILITY_IAM"
 disable_rollback = true
 parameter_overrides = "SecurityGroupId=\"\" Subnet1Id=\"\" Subnet2Id=\"\" DatabaseSecretName=\"\" DatabaseEndpoint=\"\""
 image_repositories = []
-profile = "qucoon"
+profile = ""
