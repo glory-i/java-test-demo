@@ -1,0 +1,28 @@
+
+services:
+  app:
+    build: .
+    platform: linux/amd64 # or linux/arm64 for Apple Silicon
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: 
+      SPRING_DATASOURCE_USERNAME: dbuser
+      SPRING_DATASOURCE_PASSWORD: StrongDBPass123456789*
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+
+    environment:
+    volumes:
+
+      - ./docker/database/init:/docker-entrypoint-initdb.d
+    healthcheck:
+
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+

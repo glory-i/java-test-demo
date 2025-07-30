@@ -1,0 +1,84 @@
+plugins {
+//	id 'java'
+//	id 'org.springframework.boot' version '3.4.3'
+//	id 'io.spring.dependency-management' version '1.1.7'
+	id 'java'
+	id 'org.springframework.boot' version '2.7.13'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.qucoon'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+	jcenter()
+	maven {
+		url "https://repository.aspose.com/repo/"
+	}
+	maven {
+		url "https://mvnrepository.com/artifact/org.zefer/"
+	}
+	maven {
+		url "https://mvnrepository.com/artifact/com.mysql.jdbc/"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
+	implementation 'com.google.code.gson:gson:2.8.9'
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation "com.amazonaws:aws-lambda-java-core:1.2.1"
+	implementation 'com.amazonaws.serverless:aws-serverless-java-container-springboot2:1.9'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'org.reflections:reflections:0.9.12'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	implementation files('src/main/lib/pwb-utility-1.0-all.jar')
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'redis.clients:jedis:3.10.0'
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.sql2o:sql2o:1.6.0'
+	implementation 'org.json:json:20230227'
+	implementation 'org.json:json:20220320'
+	implementation 'org.postgresql:postgresql:42.7.5'
+	implementation("com.mysql:mysql-connector-j:9.2.0")
+
+	implementation 'org.json:json:20230227'
+	implementation 'com.google.code.gson:gson:2.9.0'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	implementation 'org.mindrot:jbcrypt:0.4'
+	implementation 'org.sql2o:sql2o:1.6.0'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
