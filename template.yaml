@@ -8,6 +8,9 @@ Globals:
   Environment:
    Variables:
     POWERTOOLS_SERVICE_NAME: JavaDEMOTEST
+#    DB_URL: jdbc:sqlserver://kronos.csudtdi0cdhj.us-west-2.rds.amazonaws.com;database=SimulationDB;encrypt=true;trustServerCertificate=true;
+#    DB_USERNAME: simulationuser
+#    DB_PASSWORD: simulationpwd123
 
 Parameters:
  SecurityGroupId:
@@ -43,6 +46,7 @@ Resources:
    Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
     Variables:
      JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1 # More info about tiered compilation https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-function-performance-for-java/
+
    Events:
     HelloWorld:
      Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
