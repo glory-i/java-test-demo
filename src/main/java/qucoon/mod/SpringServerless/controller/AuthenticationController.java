@@ -85,6 +85,7 @@ public class AuthenticationController {
 //                .privilegeAuthorization(privilege, authorization);
 //    }
 
+    //testng for pipeline deployment.
     @GetMapping("/load-config")
     public BaseResponse loadAppConfig() {
         return authenticationService.loadAppConfig();
