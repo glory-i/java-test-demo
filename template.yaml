@@ -34,7 +34,7 @@ Resources:
    Handler: qucoon.mod.SpringServerless.lambda.LambdaProxy::handleRequest
    Runtime: java17
    AutoPublishAlias: production
-   Role: arn:aws:iam::005151336112:role/Lambda_Batch_Feature
+   Role: arn:aws:iam::992382810653:role/lambdaRole
    SnapStart:
     ApplyOn: PublishedVersions
    Architectures:
