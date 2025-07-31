@@ -40,7 +40,7 @@ public class CourseService {
 
 
     public BaseResponse create(CourseCreateRequest request) {
-
+        //create service endpoint.
         Course course = GSON.fromJson(GSON.toJson(request), Course.class);
         if (course.getCourseStatus() == null) {
             course.setCourseStatus("ACTIVE");
