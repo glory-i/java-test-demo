@@ -30,13 +30,23 @@ Parameters:
  DatabaseUrl:
   Type: String
   Description: Database connection URL
+  NoEcho: true
  DatabaseUsername:
    Type: String
    Description: Database username
+   NoEcho: true
  DatabasePassword:
    Type: String
    Description: Database password
    NoEcho: true
+ SpringMailUsername:
+  Type: String
+  Description:  username for email sending
+  NoEcho: true
+ SpringMailPassword:
+  Type: String
+  Description: password for email sending
+  NoEcho: true
 
 Resources:
  LambdaProxy:
@@ -59,8 +69,8 @@ Resources:
      DB_URL: !Ref DatabaseUrl
      DB_USERNAME: !Ref DatabaseUsername
      DB_PASSWORD: !Ref DatabasePassword
-     SPRING_MAIL_USERNAME: authvalidationtest@gmail.com
-     SPRING_MAIL_PASSWORD: siqyaybbrfmcbigd
+     SPRING_MAIL_USERNAME: !Ref SpringMailUsername
+     SPRING_MAIL_PASSWORD: !Ref SpringMailPassword
    Events:
     HelloWorld:
      Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

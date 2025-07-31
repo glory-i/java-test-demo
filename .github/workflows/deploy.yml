@@ -34,4 +34,6 @@ jobs:
         run: sam deploy --config-file samconfig.toml --parameter-overrides \
           DatabaseUrl="${{ secrets.DB_URL }}" \
           DatabaseUsername="${{ secrets.DB_USERNAME }}" \
+          SpringMailUsername="${{ secrets.SPRING_MAIL_USERNAME }}" \
+          SpringMailPassword="${{ secrets.SPRING_MAIL_PASSWORD }}" \
           DatabasePassword="${{ secrets.DB_PASSWORD }}"
