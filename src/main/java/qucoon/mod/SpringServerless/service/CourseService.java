@@ -43,6 +43,7 @@ public class CourseService {
         //create service endpoint.
         Course course = GSON.fromJson(GSON.toJson(request), Course.class);
         if (course.getCourseStatus() == null) {
+            System.out.println(" ");
             course.setCourseStatus("ACTIVE");
         }
         courseRepository.create(course);
