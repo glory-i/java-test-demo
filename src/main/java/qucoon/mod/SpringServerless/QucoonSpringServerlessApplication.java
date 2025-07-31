@@ -18,9 +18,12 @@ public class QucoonSpringServerlessApplication {
 		System.setProperty("DB_URL", dotenv.get("DB_URL"));
 		System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
 		System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
-		System.setProperty("TRUST_SERVER_CERTIFICATE", dotenv.get("TRUST_SERVER_CERTIFICATE"));
-		System.setProperty("DATABASE", dotenv.get("DATABASE"));
-		System.setProperty("ENCRYPT", dotenv.get("ENCRYPT"));
+		System.setProperty("SPRING_MAIL_USERNAME", dotenv.get("SPRING_MAIL_USERNAME"));
+		System.setProperty("SPRING_MAIL_PASSWORD", dotenv.get("SPRING_MAIL_PASSWORD"));
+
+//		System.setProperty("TRUST_SERVER_CERTIFICATE", dotenv.get("TRUST_SERVER_CERTIFICATE"));
+//		System.setProperty("DATABASE", dotenv.get("DATABASE"));
+//		System.setProperty("ENCRYPT", dotenv.get("ENCRYPT"));
 
 		SpringApplication.run(QucoonSpringServerlessApplication.class, args);
 	}

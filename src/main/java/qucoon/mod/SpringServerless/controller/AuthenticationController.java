@@ -24,6 +24,9 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
         this.environment = environment;
     }
+    ///
+
+    ///
 
     @PostMapping("/initiate-enrollment")
     public BaseResponse initiateEnrollment(
@@ -85,6 +88,7 @@ public class AuthenticationController {
 //                .privilegeAuthorization(privilege, authorization);
 //    }
 
+    //testng for pipeline deployment.
     @GetMapping("/load-config")
     public BaseResponse loadAppConfig() {
         return authenticationService.loadAppConfig();

@@ -22,7 +22,7 @@
          .apis(RequestHandlerSelectors.basePackage("qucoon.mod.SpringServerless"))
          .paths(PathSelectors.any())
          .build()
-         //.pathMapping("api")
+         .pathMapping("api")
          .apiInfo(apiInfo());
    }
  

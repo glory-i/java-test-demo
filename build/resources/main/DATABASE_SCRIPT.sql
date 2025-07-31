@@ -1,6 +1,6 @@
 
 
-CREATE TABLE _USER
+CREATE TABLE TEST_CAP_USER
 (
     userId INT PRIMARY KEY AUTO_INCREMENT ,
     userStatus varchar(50) DEFAULT 'PENDING',
@@ -19,8 +19,9 @@ CREATE TABLE _USER
     userUpdatedAt  ,
     userLoginCount ,
     userLastLoginDate ,
-    userLastLoginIpAddress 
-CREATE TABLE _COURSE
+    userLastLoginIpAddress
+)
+CREATE TABLE  TEST_CAP_COURSE
 (
     courseId INT PRIMARY KEY AUTO_INCREMENT ,
     courseStatus varchar(50) DEFAULT 'PENDING',
@@ -32,46 +33,29 @@ CREATE TABLE _COURSE
     courseStatus  ,
     courseCreatedAt   ,
     courseUpdatedAt  
-CREATE TABLE _USER
-(
-    userId INT PRIMARY KEY AUTO_INCREMENT ,
-    userStatus varchar(50) DEFAULT 'PENDING',
-    userCreatedAt datetime DEFAULT getdate(),
-    userUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
-    userId   UNIQUE,
-    userRoleId  ,
-    userEmail  ,
-    userFirstName  ,
-    userLastName  ,
-    userPassword  ,
-    userPhoneNumber  ,
-    userJobRoleAlias  ,
-    userStatus  ,
-    userCreatedAt   ,
-    userUpdatedAt  ,
-    userLoginCount ,
-    userLastLoginDate ,
-    userLastLoginIpAddress 
-CREATE TABLE _USER_OTP
+
+CREATE TABLE TEST_CAP_USER_OTP
 (
     userOtpId INT PRIMARY KEY AUTO_INCREMENT ,
     userOtpStatus varchar(50) DEFAULT 'PENDING',
     userOtpCreatedAt datetime DEFAULT getdate(),
     userOtpUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
     userOtpUsername ,
-    userOtpOtp 
-CREATE TABLE _LOGIN_HISTORY
-(
-    loginHistoryId INT PRIMARY KEY AUTO_INCREMENT ,
-    loginHistoryStatus varchar(50) DEFAULT 'PENDING',
-    loginHistoryCreatedAt datetime DEFAULT getdate(),
-    loginHistoryUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
-    loginHistoryUsername ,
-    loginHistoryIpAddress ,
-    loginHistoryDeviceId ,
-    loginHistoryLongitude ,
-    loginHistoryLatitude 
-CREATE TABLE _PRIVILEGE
+    userOtpOtp
+)
+CREATE TABLE TEST_CAP_LOGIN_HISTORY
+        (
+        loginHistoryId INT PRIMARY KEY AUTO_INCREMENT ,
+        loginHistoryStatus varchar (50) DEFAULT 'PENDING',
+        loginHistoryCreatedAt datetime DEFAULT getdate(),
+        loginHistoryUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
+        loginHistoryUsername ,
+        loginHistoryIpAddress ,
+        loginHistoryDeviceId ,
+        loginHistoryLongitude ,
+        loginHistoryLatitude
+        )
+CREATE TABLE TEST_CAP_PRIVILEGE
 (
     privilegeId INT PRIMARY KEY AUTO_INCREMENT ,
     privilegeStatus varchar(50) DEFAULT 'PENDING',
@@ -80,8 +64,9 @@ CREATE TABLE _PRIVILEGE
     privilegeCode ,
     privilegeName ,
     privilegeModuleName ,
-    privilegeDescription 
-CREATE TABLE _ROLE
+    privilegeDescription
+)
+CREATE TABLE TEST_CAP_ROLE
 (
     roleId INT PRIMARY KEY AUTO_INCREMENT ,
     roleStatus varchar(50) DEFAULT 'PENDING',
@@ -95,16 +80,17 @@ CREATE TABLE _ROLE
     rolePrivilegePrivilegeCode ,
     rolePrivilegeStatus ,
     rolePrivilegeCreatedAt ,
-    rolePrivilegeUpdatedAt 
-CREATE TABLE _MODULE
+    rolePrivilegeUpdatedAt
+)
+CREATE TABLE TEST_CAP_MODULE
 (
     moduleId INT PRIMARY KEY AUTO_INCREMENT ,
     moduleStatus varchar(50) DEFAULT 'PENDING',
     moduleCreatedAt datetime DEFAULT getdate(),
     moduleUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
     moduleName ,
-    moduleDescription 
-CREATE TABLE _CHECKER_QUEUE
+    moduleDescription )
+CREATE TABLE TEST_CAP_CHECKER_QUEUE
 (
     checkerQueueId INT PRIMARY KEY AUTO_INCREMENT ,
     checkerQueueStatus varchar(50) DEFAULT 'PENDING',
@@ -115,8 +101,8 @@ CREATE TABLE _CHECKER_QUEUE
     checkerQueueModule ,
     checkerQueueAction ,
     checkerQueueRequest ,
-    checkerQueueReason 
-CREATE TABLE _AUDIT_LOG
+    checkerQueueReason )
+CREATE TABLE TEST_CAP_AUDIT_LOG
 (
     auditLogId INT PRIMARY KEY AUTO_INCREMENT ,
     auditLogStatus varchar(50) DEFAULT 'PENDING',
@@ -128,12 +114,12 @@ CREATE TABLE _AUDIT_LOG
     auditLogResponse ,
     auditLogModule ,
     auditLogResponseCode ,
-    auditLogResponseMessage 
-CREATE TABLE _ROLE_PRIVILEGE
+    auditLogResponseMessage )
+CREATE TABLE TEST_CAP_ROLE_PRIVILEGE
 (
     rolePrivilegeId INT PRIMARY KEY AUTO_INCREMENT ,
     rolePrivilegeStatus varchar(50) DEFAULT 'PENDING',
     rolePrivilegeCreatedAt datetime DEFAULT getdate(),
     rolePrivilegeUpdatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT getdate(),
     rolePrivilegeRoleId ,
-    rolePrivilegePrivilegeCode 
+    rolePrivilegePrivilegeCode )
