@@ -156,6 +156,7 @@ public class LoginHistoryService {
         ResponseConstant.INSTANCE.getSUCCESS().getResponseMessage(),
         loginhistorys);
     }
+    //
     public LoginHistoryReadListResponse readByLoginHistoryCreatedAt(String loginhistorycreatedat) {
         List<LoginHistory> loginhistorys = loginhistoryRepository.readByLoginHistoryCreatedAt(loginhistorycreatedat);
         return new LoginHistoryReadListResponse(
@@ -163,6 +164,7 @@ public class LoginHistoryService {
         ResponseConstant.INSTANCE.getSUCCESS().getResponseMessage(),
         loginhistorys);
     }
+    //
     //
     //
     public LoginHistoryReadListResponse readByLoginHistoryUpdatedAt(String loginhistoryupdatedat) {
